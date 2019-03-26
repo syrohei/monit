@@ -1,21 +1,22 @@
 version: "3"
 services:
-  bitcoin-core-test3:
-    image: ruimarinho/bitcoin-core
-    ports:
-      - "18332:18332"
-      - "18333:18333"
-    volumes:
-      - ./btc_test3_data:/home/bitcoin/.bitcoin
-    command:
-      -printtoconsole
-      -regtest=1
-      
-  esplora-test3
+  esplora-test3:
     image: esplora
     ports:
       - "8084:80"
     volumes:
       - ./btc_test3_data:/data
-    command:
-      - "/srv/explorer/run.sh bitcoin-testnet explorer"
+    command: >
+      bash -c "/srv/explorer/run.sh bitcoin-testnet explorer"
+
+  #bitcoin-core-test3:
+  #  image: ruimarinho/bitcoin-core
+  #  ports:
+  #    - "18332:18332"
+  #    - "18333:18333"
+  #  volumes:
+  #    - ./btc_test3_data:/home/bitcoin/.bitcoin
+  #  command:
+  #    -printtoconsole
+  #    -regtest=1
+      
