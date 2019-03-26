@@ -2,7 +2,6 @@ version: "3"
 services:
   esplora-test3:
     image: blockstream/esplora
-
     ports:
       - "8084:80"
     volumes:
