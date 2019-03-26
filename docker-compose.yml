@@ -13,6 +13,8 @@ services:
       
   esplora-test3
     image: esplora
+    ports:
+      - "8084:80"
     volumes:
       - ./btc_test3_data:/data
     command:
