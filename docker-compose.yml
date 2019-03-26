@@ -6,7 +6,14 @@ services:
       - "18332:18332"
       - "18333:18333"
     volumes:
-      - btc_test3_data:/home/bitcoin/.bitcoin
+      - ./btc_test3_data:/home/bitcoin/.bitcoin
     command:
       -printtoconsole
       -regtest=1
+      
+  esplora-test3
+    image: esplora
+    volumes:
+      - ./btc_test3_data:/data
+    command:
+      - "/srv/explorer/run.sh bitcoin-testnet explorer"
